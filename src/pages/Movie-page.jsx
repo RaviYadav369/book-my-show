@@ -1,9 +1,34 @@
-import React from 'react'
+import axios from 'axios';
+import React,{useState,useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import Movielayout from '../layout/Movie-layout'
 
 function Moviepage() {
+  const { id } = useParams();
+
+  const [cast, setcast] = useState();
+
+  useEffect(() => {
+    const requestCast = async () =>{
+      const getCast = await axios.get('/movies/${id}/credits');
+      setcast(getCast.data.cast)
+    } 
+  requestCast();
+  }, [id]);
+  const [similarMovies,setsimilarMovies] =useState();
+  useEffect(() => {
+    const requestSimillarMovies = async () =>{
+      const getSimillarMovies = await axios.get('/movies/${id}/credits');
+      setcast(getSimillarMovies.data.cast)
+    } 
+  requestSimillarMovies();
+  }, [id]);
+  
+
   return (
-    <div>Movie-page</div>
+    <>
+   <div>Movies - details</div>
+    </>
   )
 }
 
