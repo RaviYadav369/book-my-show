@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import PosterComponent from "../Poster/PosterComponent";
 
 const PostSliderComponent = (props) => {
-  const { posters, title, subtitle, isDark } = props;
+  const { posters, title, subtitle, isDark, config } = props;
 
   const settings = {
     infinite: false,
@@ -38,7 +38,7 @@ const PostSliderComponent = (props) => {
 
   return (
     <>
-      <div className="flex flex-col items-start sm:ml-3 ml-0 my-2">
+      <div className="w-full flex flex-col items-start sm:ml-3 ml-0 my-2">
         <h3
           className={`text-2xl font-bold ${
             isDark ? "text-white" : "text-black"
@@ -50,11 +50,20 @@ const PostSliderComponent = (props) => {
           {subtitle}
         </p>
       </div>
+      {config && 
+      <Slider {...config}>
+      {posters.map((each, index) => (
+        <PosterComponent {...each} isDark={isDark} key={index} />
+      ))}
+    </Slider>
+      }
+      {!config && 
       <Slider {...settings}>
-        {posters.map((each, index) => (
-          <PosterComponent {...each} isDark={isDark} key={index} />
-        ))}
-      </Slider>
+      {posters.map((each, index) => (
+        <PosterComponent {...each} isDark={isDark} key={index} />
+      ))}
+    </Slider>
+      }
     </>
   );
 };

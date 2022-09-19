@@ -41,13 +41,13 @@ const Homepage = () => {
   return (
     <>
       <HeroCarouselComponent />
-      <div className="container mx-auto px-4 md:px-12 my-8">
+      <div className="container mx-auto px-4 md:px-12 my-8 ">
         <h1 className="text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3">
           The best of Entertainment
         </h1>
         <EntertainmentCardComponent />
       </div>
-      <div className="container mx-auto px-4 md:px-12 my-8">
+      <div className="container mx-auto px-4 md:px-12 my-8 ">
         <PostSliderComponent
           title="Recommended Movies"
           subtitle="List of recommended movies"
@@ -72,7 +72,7 @@ const Homepage = () => {
           />
         </div>
       </div>
-      <div className="contaimer mx-auto px-4 md:px-12 my-8 ">
+      <div className="container mx-auto px-4 md:px-12 my-8 ">
         <PostSliderComponent
           title="Online Streaming Event"
           subtitle="Brand new releases every friday"
