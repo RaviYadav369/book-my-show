@@ -5,7 +5,7 @@ import { NextArrow, PrevArrow } from './Arrows-Component';
 
 function HeroCarouselComponent() {
 
-  const [images, setImages] = useState([
+  const [images] = useState([
     {
       adult: false,
       backdrop_path: "/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
@@ -46,7 +46,6 @@ function HeroCarouselComponent() {
     arrows: true,
     slidesToShow: 1,
     infinite: true,
-    speed: 500,
     slideToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,

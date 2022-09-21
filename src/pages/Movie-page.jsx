@@ -46,7 +46,7 @@ function Moviepage() {
 
   useEffect(() => {
     const requestMovie = async () => {
-      const getMovieData = await axios.get(`./movie/${id}`);
+      const getMovieData = await axios.get(`/movie/${id}`);
       setmovie(getMovieData.data);
     };
     requestMovie();

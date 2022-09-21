@@ -3,7 +3,7 @@ import { BiChevronDown, BiMenu, BiSearch, BiShareAlt } from 'react-icons/bi'
 import { MovieContext } from '../../context/Movie-Context';
 
 const NavSm = () => {
-  const { movie, setmovie } = useContext(MovieContext);
+  const { movie} = useContext(MovieContext);
 
   return (
     <>
